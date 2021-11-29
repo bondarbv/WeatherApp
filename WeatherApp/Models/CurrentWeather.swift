@@ -5,8 +5,6 @@
 //  Created by Bohdan on 28.11.2021.
 //
 
-import Foundation
-
 struct CurrentWeather {
     let cityName: String
     
@@ -36,9 +34,9 @@ struct CurrentWeather {
     }
     
     init?(currentWeatherData: CurrentWeatherData) {
-    cityName = currentWeatherData.name
-    temperature = currentWeatherData.main.temp
-    feelsLikeTemperature = currentWeatherData.main.feelsLike
-    conditionCode = currentWeatherData.weather.first!.id
+        cityName = currentWeatherData.name
+        temperature = currentWeatherData.main.temp
+        feelsLikeTemperature = currentWeatherData.main.feelsLike
+        conditionCode = currentWeatherData.weather.first!.id
     }
 }

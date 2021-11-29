@@ -8,7 +8,7 @@
 import Foundation
 
 class NetworkWeatherManager {
-
+    
     var onCompletion: ((CurrentWeather) -> Void)?
     
     func fetchCurrentWeather(forCity city: String) {
@@ -19,15 +19,15 @@ class NetworkWeatherManager {
             if let data = data {
                 if  let currentWeather = self.parseJSON(withData: data) {
                     self.onCompletion?(currentWeather)
+                }
             }
-        }
         }
         task.resume()
     }
     func parseJSON(withData data: Data) -> CurrentWeather? {
         let decoder = JSONDecoder()
         do {
-        let currentWeatherData = try decoder.decode(CurrentWeatherData.self, from: data)
+            let currentWeatherData = try decoder.decode(CurrentWeatherData.self, from: data)
             guard let currentWeather = CurrentWeather(currentWeatherData: currentWeatherData) else {
                 return nil
             }

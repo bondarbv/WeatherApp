@@ -5,8 +5,6 @@
 //  Created by Bohdan on 28.11.2021.
 //
 
-import Foundation
-
 struct CurrentWeatherData: Codable {
     let name: String
     let main: Main
